@@ -87,8 +87,8 @@ block container
               label.col-sm-2.col-form-label(for='topic') Topic
               .col-sm-10
                 .custom-select
-                  select#topic.form-control(name="topic" required)
-                    option(value="") Select
+                  select#topic.form-control(name="topic" required, data-placeholder="Select", aria-required="true")
+                    option(value="")
                     option(value="1") 1
                     option(value="2") 2
                     option(value="3") 3
