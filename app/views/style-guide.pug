@@ -1,0 +1,174 @@
+extends layouts/template
+
+block vars
+  -title = 'Style Guide'
+
+block container
+  .row
+    .col-sm-10.offset-sm-1
+      h2.title-styleguide Title and text
+      .row
+        .col-md-6
+          h2.title-default This is title default. 
+          h2.title-primary This is title primary.
+        
+        .col-md-6
+          p this is normal text
+          p.font-weight-light this is light text
+          p.font-italic this is italic text
+          p.font-weight-bold this is bold text
+
+      h2.title-styleguide Buttons
+      .row
+        .col-12
+          +button('Button Primary','btn-primary').btn.btn-primary
+          +button('Button Secondary','btn-secondary').btn.btn-secondary
+          +button('Button Success','btn-success').btn.btn-success
+          +button('Button Warning','btn-warning').btn.btn-warning
+          +button('Button Dark','btn-dark').btn.btn-dark
+          +link().btn.btn-link Button Link 
+      hr
+      .row
+        .col-12
+          .btn-group.mr-2
+            +button('Button Primary','btn-primary').btn.btn-primary
+          .btn-group
+            +button('Button Secondary','btn-secondary').btn.btn-secondary
+      
+      h2.title-styleguide Paging 
+      .row
+        .col-6
+          .btn-group
+            +link('1').btn.btn-primary
+            +link('2').btn.btn-primary
+            +link('3').btn.btn-primary
+            +link('4').btn.btn-primary
+            +link('5').btn.btn-primary
+          
+      h2.title-styleguide Form elements
+      .row
+        .col-md-5
+          h3.title-component Sign up form
+          form(action="" method="post" name="form-general")#signupForm
+            .form-group
+              label(for='signup-name') Name
+              input#signup-name.form-control(type='text' placeholder='Name')
+
+            .form-group
+              label(for='signup-email') Email address
+              input#signup-email.form-control(type='email' aria-describedby='emailHelp' placeholder='Enter email' required)
+              small#emailHelp.form-text.text-muted We&apos;ll never share your email with anyone else.
+
+            .form-group
+              label(for='signup-password') Password
+              input#signup-password.form-control(type='password' placeholder='Password' name="password" minlength=6 maxlength=16 required)
+
+            .form-group
+              label(for='signup-confirmPassword') Confirm password
+              input#signup-confirmPassword.form-control(type='password' placeholder='Password' name="confirm_password" data-rule-equalTo="#signup-password" required)
+
+            .form-check.form-check-inline
+              input#signup-term.form-check-input(type='checkbox' name="term" required)
+              label.form-check-label(for='signup-term') Please accept our term and condition
+
+            .form-check.form-check-inline
+              input#signup-newsletter.form-check-input(type='checkbox')
+              label.form-check-label(for='signup-newsletter') I'd like to receive the newsletter
+
+            .row
+              .col-12
+                +button('Submit').btn.btn-primary
+                +button('Reset','btn-reset','reset').btn.btn-dark
+
+        .col-md-5.offset-md-1
+          h3 General form 
+          form(action="" method="post" name="form-comment")#commentForm
+            .form-group.row
+              label.col-sm-2.col-form-label(for='topic') Topic
+              .col-sm-10
+                .custom-select
+                  select#topic.form-control(name="topic" required)
+                    option(value="") Select
+                    option(value="1") 1
+                    option(value="2") 2
+                    option(value="3") 3
+                    option(value="4") 4
+                    option(value="5") 5
+
+            //- .form-group.row
+            //-   label.col-sm-2.col-form-label(for='topic2') Topic 2
+            //-   .col-sm-10
+            //-     select#topic2.form-control(name="topic2" required)
+            //-       option(value="")
+            //-       option(value="1") 1
+            //-       option(value="2") 2
+            //-       option(value="3") 3
+            //-       option(value="4") 4
+            //-       option(value="5") 5
+
+            .form-group.row
+              label.col-sm-2.col-form-label(for='comment-email') Email
+              .col-sm-10
+                input#comment-email.form-control(type='email' placeholder='Email' required)
+            
+            .form-group.row
+              label.col-sm-2.col-form-label(for='inputEmail3') Message
+              .col-sm-10
+                textarea.form-control(name="comment", cols="30", rows="5", placeholder="Leave your message here" required)
+
+            .form-group
+              label.col-form-label(for='document-text') Select a plain text file or pdf
+              input#document-text.form-control(type='file' name="document-text" accept="text/plain,application/pdf" required)
+            
+            .form-group
+              label.col-form-label(for='document-media') Select any audio or image file
+              input#document-media.form-control(type='file' name="document-media" accept="image/*,audio/*" required)
+
+            .form-check
+              input#exampleRadios1.form-check-input(type='radio' name='exampleRadios' value='option1' checked='')
+              label.form-check-label(for='exampleRadios1')
+                | Default radio
+            .form-check
+              input#exampleRadios2.form-check-input(type='radio' name='exampleRadios' value='option2')
+              label.form-check-label(for='exampleRadios2')
+                | Second default radio
+            .form-check.disabled
+              input#exampleRadios3.form-check-input(type='radio' name='exampleRadios' value='option3' disabled='')
+              label.form-check-label(for='exampleRadios3')
+                | Disabled radio
+            .row
+              .col-12
+                +button('Submit').btn.btn-primary
+
+      hr
+      .row
+        .col-md-6
+          h3 Inline Form
+          form(action="" method="post" name="form-inline")
+            .form-row
+              .form-group.col-md-4
+                input.form-control(type='text' placeholder='First name')
+              .form-group.col-md-4
+                input.form-control(type='text' placeholder='Last name')
+              .form-group.col-md-4
+                input#disabledInput.form-control(type='text' placeholder='Username' disabled='')
+
+              .form-group.col-md-6
+                label(for='inputCity') City
+                input#inputCity.form-control(type='text')
+              .form-group.col-md-4
+                label(for='inputState') State
+                select#inputState.form-control
+                  option(selected='') Choose...
+                  option ...
+              .form-group.col-md-2
+                label(for='inputZip') Zip
+                input#inputZip.form-control(type='text')
+
+        
+           
+
+
+
+      
+  

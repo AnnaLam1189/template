@@ -1,0 +1,93 @@
+mixin carousel-banner(src, subtitle, title )
+  - if (typeof(src) === 'undefined') src = 'images/upload/photo-large-1.jpg'
+  - if (typeof(subtitle) === 'undefined') subtitle = 'PLAN FOR ME'
+  - if (typeof(title) === 'undefined') title = 'Banking in moments that matter.'
+    section.item
+      .thumb(style="background-image: url("+src+");")
+      .caption
+        .inner-container
+          .middle-block
+            h3.sub-title #{subtitle}
+            h2.intro #{title}
+            .button-group
+              +link('DISCOVER').btn-primary
+
+
+
+mixin banner-redempt(src, title, redempt, content, subtitle )
+  - if (typeof(src) === 'undefined') src = 'images/upload/photo-large-1.jpg'
+  - if (typeof(title) === 'undefined') title = 'Save and Invest'
+  - if (typeof(content) === 'undefined') content = 'Be safe or be adventurous. Your call.'
+    section.banner
+      .thumb(style="background-image: url("+src+");")
+      .caption
+        .inner-container
+          - if (typeof(subtitle) !== 'undefined')
+            h3.sub-title #{subtitle}
+          h2.title-1.line #{title}
+          h4.title-3 #{redempt}
+          p #{content}
+          if block
+            block
+
+mixin banner(src, title, content, subtitle )
+  - if (typeof(src) === 'undefined') src = 'images/upload/photo-large-1.jpg'
+  - if (typeof(title) === 'undefined') title = 'Save and Invest'
+  - if (typeof(content) === 'undefined') content = 'Be safe or be adventurous. Your call.'
+    section.banner
+      .thumb(style="background-image: url("+src+");")
+      .caption
+        .inner-container
+          - if (typeof(subtitle) !== 'undefined')
+            h3.sub-title #{subtitle}
+          h3.title-1.line #{title}
+          p #{content}
+          if block
+            block
+
+mixin banner-card(src, title, content, subtitle, card)
+  - if (typeof(src) === 'undefined') src = 'images/upload/photo-large-1.jpg'
+  - if (typeof(title) === 'undefined') title = 'Be1st Smart Card'
+  - if (typeof(content) === 'undefined') content = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo.'
+  - if (typeof(card) === 'undefined') card = 'images/upload/card-large-2.png'
+    section.banner
+      .thumb(style="background-image: url("+src+");")
+      .caption
+        .inner-container
+          - if (typeof(subtitle) !== 'undefined')
+            h3.sub-title #{subtitle}
+          h3.title-1.line #{title}
+          p #{content}
+          .button-group
+            +link('TALK TO US').btn-primary(data-modal="talk-to-us-modal")
+            +link('COMPARE').btn-default.white
+          +img(card).card-img
+
+mixin banner-card-apply(src, title, content, subtitle, card)
+  - if (typeof(src) === 'undefined') src = 'images/upload/photo-large-1.jpg'
+  - if (typeof(title) === 'undefined') title = 'Be1st Smart Card'
+  - if (typeof(content) === 'undefined') content = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo.'
+  - if (typeof(card) === 'undefined') card = 'images/upload/card-large-2.png'
+    section.banner
+      .thumb(style="background-image: url("+src+");")
+      .caption
+        .inner-container
+          - if (typeof(subtitle) !== 'undefined')
+            h3.sub-title #{subtitle}
+          h3.title-1.line #{title}
+          p #{content}
+          .button-group
+            +link('Apply now').btn-primary(data-modal="modal-apply-online")
+            +link('COMPARE').btn-default.white
+          +img(card).card-img
+
+mixin paging ()
+  .paging
+    +link('Previous','#','').prev.disable
+    ul
+      li: +link('1','javascript:void(0)').selected
+      li: +link('2')
+      li: +link('3')
+      li: +link('4')
+    +link('Next','#','').next
+

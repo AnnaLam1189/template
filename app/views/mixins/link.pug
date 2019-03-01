@@ -1,0 +1,16 @@
+mixin link(title, href, text)
+  - if (typeof(text) === 'undefined') text = title
+  - if (typeof(href) === 'undefined') href = '#'
+  a(href=href, title=title)&attributes(attributes)
+    if block
+      block
+    else
+      !=text
+      
+mixin link-img(src, title, href)
+  - if (typeof(text) === 'undefined') text = title
+  - if (typeof(href) === 'undefined') href = '#'
+  a(href=href, title=title)&attributes(attributes)
+    img(src=src, alt=title)
+    if block
+      block

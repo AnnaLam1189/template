@@ -1,0 +1,46 @@
+include ../mixins/all
+
+footer#footer
+  .inner-container
+    .row
+      .col-md-3
+        .group-link
+          h3.title About MTL
+          .list-links
+            +list([{title: 'About Us', href: ''},
+              {title: 'Text 1', href: ''},
+              {title: 'Text 2', href: ''},
+              {title: 'Text 3', href: ''},
+              {title: 'Contact Us', href: ''},
+              {title: 'Terms and Conditions', href: ''},
+              {title: 'Sitemap', href: ''}]).list-unstyled
+
+      .col-md-3
+        .group-link
+          h3.title Related Websites
+          .list-links
+            +list([{title: 'Text 1', href: ''},
+              {title: 'Text 2', href: ''},
+              {title: 'Text 3', href: ''},
+              {title: 'Text 4', href: ''},
+              {title: 'Text 5', href: ''}]).list-unstyled
+
+      .col-md-3
+        .group-link
+          h3.title For Agent
+          .list-links
+            +list([{title: 'Text 1', href: ''},
+              {title: 'Text text text', href: ''},
+              {title: 'Text text text text', href: ''}]).list-unstyled
+
+      .col-md-3
+        .group-link
+          h3.title Media/Print Ads
+          .list-links
+            +list([{title: 'TVCs', href: ''},
+              {title: 'Applications', href: ''}]).list-unstyled
+
+  .footer-bot
+    .inner-container
+      p.copy-right &copy; 2019 Muang Thai Life Assurance Public Company Limited
+      

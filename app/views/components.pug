@@ -1,0 +1,14 @@
+extends layouts/template
+
+block vars
+  -title = 'All components'
+  -bodyClass = ''
+
+
+block container
+  .container
+    h2.title-component Thumbnail
+    //- Half Width Image
+    .wrapper.bgd-grey
+      +thumb-default('images/upload/thumb-6.jpg', 'Lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim .','modal-card-discover')
+      +thumb-default-right('images/upload/thumb-6.jpg', 'Lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim .','modal-card-discover')
