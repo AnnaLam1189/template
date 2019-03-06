@@ -208,62 +208,131 @@
 // Replaces the browser default select with a custom one, mostly pulled from
 // https://primer.github.io/.
 //
-
+/* The container must be positioned relative: */
 .custom-select {
-  display: inline-block;
-  width: 100%;
-  height: $custom-select-height;
-  padding: $custom-select-padding-y ($custom-select-padding-x + $custom-select-indicator-padding) $custom-select-padding-y $custom-select-padding-x;
-  font-family: $custom-select-font-family;
-  @include font-size($custom-select-font-size);
-  font-weight: $custom-select-font-weight;
-  line-height: $custom-select-line-height;
-  color: $custom-select-color;
-  vertical-align: middle;
-  background: $custom-select-background;
-  background-color: $custom-select-bg;
-  border: $custom-select-border-width solid $custom-select-border-color;
-  @include border-radius($custom-select-border-radius, 0);
-  @include box-shadow($custom-select-box-shadow);
-  appearance: none;
-
-  &:focus {
-    border-color: $custom-select-focus-border-color;
-    outline: 0;
-    @if $enable-shadows {
-      box-shadow: $custom-select-box-shadow, $custom-select-focus-box-shadow;
-    } @else {
-      box-shadow: $custom-select-focus-box-shadow;
-    }
-
-    &::-ms-value {
-      // For visual consistency with other platforms/browsers,
-      // suppress the default white text on blue background highlight given to
-      // the selected option text when the (still closed) <select> receives focus
-      // in IE and (under certain conditions) Edge.
-      // See https://github.com/twbs/bootstrap/issues/19398.
-      color: $input-color;
-      background-color: $input-bg;
-    }
-  }
-
-  &[multiple],
-  &[size]:not([size="1"]) {
-    height: auto;
-    padding-right: $custom-select-padding-x;
-    background-image: none;
-  }
-
-  &:disabled {
-    color: $custom-select-disabled-color;
-    background-color: $custom-select-disabled-bg;
-  }
-
-  // Hides the default caret in IE11
-  &::-ms-expand {
-    display: none;
-  }
+  position: relative;
+  font-family: Arial;
 }
+
+.custom-select select {
+  // display: none; /*hide original SELECT element: */
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.select-selected {
+  cursor: pointer;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* Style the arrow inside the select element: */
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 16px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #212529 transparent transparent transparent;
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #212529 transparent;
+  top: 9px;
+}
+
+/* style the items (options), including the selected item: */
+.select-items div {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+}
+
+/* Style items (options): */
+.select-items {
+  position: absolute;
+  background-color: DodgerBlue;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+// .custom-select {
+//   display: inline-block;
+//   width: 100%;
+//   height: $custom-select-height;
+//   padding: $custom-select-padding-y ($custom-select-padding-x + $custom-select-indicator-padding) $custom-select-padding-y $custom-select-padding-x;
+//   font-family: $custom-select-font-family;
+//   @include font-size($custom-select-font-size);
+//   font-weight: $custom-select-font-weight;
+//   line-height: $custom-select-line-height;
+//   color: $custom-select-color;
+//   vertical-align: middle;
+//   background: $custom-select-background;
+//   background-color: $custom-select-bg;
+//   border: $custom-select-border-width solid $custom-select-border-color;
+//   @include border-radius($custom-select-border-radius, 0);
+//   @include box-shadow($custom-select-box-shadow);
+//   appearance: none;
+
+//   &:focus {
+//     border-color: $custom-select-focus-border-color;
+//     outline: 0;
+//     @if $enable-shadows {
+//       box-shadow: $custom-select-box-shadow, $custom-select-focus-box-shadow;
+//     } @else {
+//       box-shadow: $custom-select-focus-box-shadow;
+//     }
+
+//     &::-ms-value {
+//       // For visual consistency with other platforms/browsers,
+//       // suppress the default white text on blue background highlight given to
+//       // the selected option text when the (still closed) <select> receives focus
+//       // in IE and (under certain conditions) Edge.
+//       // See https://github.com/twbs/bootstrap/issues/19398.
+//       color: $input-color;
+//       background-color: $input-bg;
+//     }
+//   }
+
+//   &[multiple],
+//   &[size]:not([size="1"]) {
+//     height: auto;
+//     padding-right: $custom-select-padding-x;
+//     background-image: none;
+//   }
+
+//   &:disabled {
+//     color: $custom-select-disabled-color;
+//     background-color: $custom-select-disabled-bg;
+//   }
+
+//   // Hides the default caret in IE11
+//   &::-ms-expand {
+//     display: none;
+//   }
+// }
 
 .custom-select-sm {
   height: $custom-select-height-sm;
