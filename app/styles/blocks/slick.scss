@@ -181,5 +181,6 @@
     display: none!important;
 }
 .slider-left {
-    .slick-list{padding:0 20% 0 0;}
+    overflow: visible;
+    .slick-list{overflow: visible;}
 }
