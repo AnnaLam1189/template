@@ -1,6 +1,64 @@
 .title-default {
-  font-size: 2rem;
+  @extend .text-large;
 }
 .title-primary {
-  font-size: 1.5rem;
+  font-size: $font-size-base;
+  font-weight: bold;
+}
+.title-main-1 {
+  font-size: 5rem;
+  font-weight: bold;
+}
+.title-main-2 {
+  font-size: 4.2rem;
+  font-weight: bold;
+}
+.title-main-3 {
+  font-size: 3.6rem;
+}
+
+.text-default {
+  font-size: $font-size-base;
+}
+.text-large {
+  font-size: $font-large;
+}
+.text-medium {
+  font-size: $font-medium;
+}
+.text-small {
+  font-size: $font-small;
+}
+.text-smaller {
+  font-size: $font-smaller;
+}
+.text-blue {
+  color: $color-6;
+}
+.text-pink {
+  color: $color-5;
+}
+
+.text-1 {
+  color: $color-1;
+}
+.text-2 {
+  color: $color-2;
+}
+
+.publish-time {
+  @extend .text-smaller;
+  @extend .text-1;
+  span:not(:first-child){
+    &:before {
+      content: '';
+      width: 3px;
+      height: 3px;
+      background: $color-1;
+      @include border-radius(50%);
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 5px;
+    }
+  }
 }

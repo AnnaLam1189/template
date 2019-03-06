@@ -1,0 +1,16 @@
+.listing-item {
+  overflow: hidden;
+  border-bottom: 1px solid $color-3;
+  padding: $grid-gutter-width 0;
+  .thumb {
+    width: 156px;
+    height: 156px;
+    background-size: cover;
+    border-radius: 50%;
+    float: left;
+    margin-right: $grid-gutter-width;
+  }
+  .info {
+    overflow: hidden;
+  }
+}

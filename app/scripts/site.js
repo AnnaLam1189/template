@@ -36,7 +36,37 @@ POC = (function(w){
     $("#commentForm").validate({
 
     })
-
+		$('.fadeOut').owlCarousel({
+			items: 1,
+			animateOut: 'fadeOutLeft',
+			// animateIn: 'fadeInLeft',
+			loop: true,
+			margin: 10,
+			nav: true,
+			// animateOut: 'slideOutDown',
+			// animateIn: 'flipInX',
+			// items:1,
+			// margin:30,
+			// stagePadding:30,
+			// smartSpeed:450
+		});
+		// var owl = $('.owl-carousel');
+		// 	owl.owlCarousel({
+		// 		margin: 10,
+		// 		nav: true,
+		// 		loop: true,
+		// 		responsive: {
+		// 			0: {
+		// 				items: 1
+		// 			},
+		// 			600: {
+		// 				items: 3
+		// 			},
+		// 			1000: {
+		// 				items: 5
+		// 			}
+		// 		}
+		// 	})
   };
   
 

@@ -1,0 +1,70 @@
+
+.owl-theme {
+	// Styling Next and Prev buttons
+	.owl-nav {
+		margin-top: 10px;
+		text-align: center;
+		-webkit-tap-highlight-color: transparent;
+
+		[class*='owl-'] {
+			color: pink;
+			font-size: 1rem;
+			margin: 20px;
+			padding: 20px;
+			background: green;
+			display: inline-block;
+			cursor: pointer;
+			border-radius: 3px;
+
+			&:hover {
+				background: lightgreen;
+				color:pink;
+				text-decoration: none;
+			}
+		}
+		.disabled {
+			opacity: 0.5;
+			cursor: default;
+		}
+	}
+
+	// Styling dots
+	.owl-nav.disabled + .owl-dots {
+		margin-top: 10px;
+	}
+
+	.owl-dots {
+		text-align: center;
+		-webkit-tap-highlight-color: transparent;
+
+		.owl-dot {
+			display: inline-block;
+			zoom: 1;
+			*display: inline;
+
+			span {
+				width: 10px;
+				height: 10px;
+				margin: 5px;
+				background: blue;
+				display: block;
+				-webkit-backface-visibility: visible;
+				transition: opacity 200ms ease;
+				border-radius: 5px;
+			}
+
+			&.active,
+			&:hover {
+				span {
+					background: lightblue;
+				}
+			}
+		}
+	}
+	.owl-item {
+		.item {
+			background: lightgreen;
+			height: 100px;
+		}
+	}
+}

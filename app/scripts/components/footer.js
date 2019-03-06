@@ -1,7 +1,7 @@
 ;(function($, window, undefined) {
   'use strict';
 
-  var pluginName = 'dropdown';
+  var pluginName = 'footer';
 
   function Plugin(element, options) {
     this.element = $(element);
@@ -35,10 +35,14 @@
   };
 
   $(function() {
-    $('.mobile .group-link:not(.no-sub) .title').on('click.showFooter', function(e) {
+    $('.input input').on('focus.lableAnim', function(){
+      $(this).siblings('label').addClass('on-focus')
+    });
+
+    $('.mobile .group-link:not(.no-sub) .title .collapse-icon').on('click.showFooter', function(e) {
       e.preventDefault();
       var group = $(this).closest('.group-link');
-      var newContent = $(this).siblings('.list-links');
+      var newContent = group.find('.list-links');
 
       if(group.hasClass('active')) {
         group.removeClass('active');

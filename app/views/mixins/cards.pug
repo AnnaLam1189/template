@@ -1,0 +1,56 @@
+
+mixin card-1(src)
+  - if (typeof(src) === 'undefined') src = 'images/upload/photo-large-3.jpg'
+  a.card.card-1(href="")
+    .thumb(style='background-image: url('+ src +')')
+    .info
+      p Sarunyoo Reangmunjit
+      p.text-medium MTL Customer
+      .description The difference with MTL is just how easy everything is. Health insurance can be so confusing and stressful and MTL it just takes all that away.
+
+mixin card-2(src)
+  - if (typeof(src) === 'undefined') src = 'images/upload/photo-large-3.jpg'
+  a.card.card-2(href="")
+    .thumb-wrap
+      span.thumb(style='background-image: url('+ src +')')
+    .info
+      .group-card-label
+        .card-label.blue OPD
+        .card-label.pink IPD
+      h4.title-primary.mt-4 Muangthai Happy Lady Plus
+      
+      p.text-smaller Maximum coverage 375,000 THB / Year
+      .group-card-label
+        span.card-label Security
+        span.card-label Worry less
+        span.card-label Convenient
+
+
+mixin card-3(src, title , content )
+  - if (typeof(src) === 'undefined') src = 'images/upload/photo-large-3.jpg'
+  - if (typeof(title) === 'undefined') title = 'No more to worry about requesting for tax deduction.'
+  - if (typeof(content) === 'undefined') content = 'Get the documents of personal income tax deductions From health insurance premiums From tax year 2018 onwards'
+
+  .inner-container
+    .row.no-gutters.card.card-3&attributes(attributes)
+      .col-sm-6
+        .caption
+          h2.title-main-3 #{title}
+          .desc.mt-5 #{content}
+          +link('Request the document').btn-primary
+      .col-sm-6
+        .thumb(style="background-image: url("+src+")")
+
+mixin card-full(src, title , content )
+  - if (typeof(src) === 'undefined') src = 'images/upload/photo-large-8.jpg'
+  - if (typeof(title) === 'undefined') title = 'Smart & Simple Application'
+  - if (typeof(content) === 'undefined') content = "We've here for you. We're available on your Smile Plus app to help."
+
+  .card-full(style="background-image: url("+src+")")&attributes(attributes)
+    .inner-container
+      .caption
+        h2.title-main-2 #{title}
+        .desc.mt-5 #{content}
+      .group-inline.mt-5
+        +link-img('images/apple-store.png').app-store
+        +link-img('images/play-store.png').app-store

@@ -1,7 +1,39 @@
+button:focus {
+  outline: none;
+}
 .btn-default {
   @include border-radius($radius)
 }
 
 .btn-primary {
+  font: bold $font-size-base 'Ubuntu',$font-family-base;
+  line-height: 56px;
+  color: $color-2;
+  background: white;
+  padding: 0 30px;
+  display: inline-block;
+  border-radius: 28px;
+  transition: all 0.3s;
+  &:hover {
+    text-decoration: none;
+    background: white;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+    color: $color-2;
+  }
+}
+.app-store {
+  overflow: hidden;
+  display: inline-block;
+  img {
+    max-width: 222px;
+    border-radius: 5px;
+  }
 
+}
+.group-inline {
+  > span, >a , >.button {
+    &:not(:first-child) {
+      margin-left: $grid-gutter-width;
+    }
+  }
 }

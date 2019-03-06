@@ -1,0 +1,18 @@
+include ../mixins/all
+
+mixin listing-item(items)
+  each item in items
+    
+    .listing-item
+      .thumb(style='background-image: url('+item.src+')')
+      .info
+        p.text-uppercase.text-1 The Deep Dive
+        h4.title-default Deep Dive article headline goes here and can wrap onto two lines like this
+        p.text-small.text-2 By Paul McIntrye - Executive Editor
+        p.publish-time
+          span 07 March 2019
+          span 8min read
+
++listing-item([{src: 'images/upload/thumb-1.jpg'},
+              {src: 'images/upload/thumb-2.jpg'},
+              {src: 'images/upload/thumb-3.jpg'}])

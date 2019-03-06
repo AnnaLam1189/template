@@ -3,44 +3,81 @@ include ../mixins/all
 footer#footer
   .inner-container
     .row
-      .col-md-3
-        .group-link
-          h3.title About MTL
-          .list-links
-            +list([{title: 'About Us', href: ''},
-              {title: 'Text 1', href: ''},
-              {title: 'Text 2', href: ''},
-              {title: 'Text 3', href: ''},
-              {title: 'Contact Us', href: ''},
-              {title: 'Terms and Conditions', href: ''},
-              {title: 'Sitemap', href: ''}]).list-unstyled
+      .col-md-8
+        .row
+          .col-md-3
+            .group-link
+              h3.title 
+                +link('Solutions from MTL')
+                span.collapse-icon
+              .list-links
+                +list([{title: 'Our product', href: ''},
+                  {title: 'Muang Thai Smile Club', href: ''},
+                  {title: 'Other services', href: ''}]).list-unstyled
+            
+          .col-md-3
+            .group-link
+              h3.title
+                +link('Useful resources')
+                span.collapse-icon
+              .list-links
+                +list([{title: 'Learn', href: ''},
+                  {title: 'Updates', href: ''},
+                  {title: 'Media', href: ''}]).list-unstyled
 
-      .col-md-3
-        .group-link
-          h3.title Related Websites
-          .list-links
-            +list([{title: 'Text 1', href: ''},
-              {title: 'Text 2', href: ''},
-              {title: 'Text 3', href: ''},
-              {title: 'Text 4', href: ''},
-              {title: 'Text 5', href: ''}]).list-unstyled
+          .col-md-3
+            .group-link
+              h3.title
+                +link('About MTL')
+                span.collapse-icon
+              .list-links
+                +list([{title: 'Our story', href: ''},
+                  {title: 'Career', href: ''}]).list-unstyled
 
-      .col-md-3
-        .group-link
-          h3.title For Agent
-          .list-links
-            +list([{title: 'Text 1', href: ''},
-              {title: 'Text text text', href: ''},
-              {title: 'Text text text text', href: ''}]).list-unstyled
+          .col-md-3
+            .group-link
+              h3.title
+                +link('Quick links')
+                span.collapse-icon
+              .list-links
+                +list([{title: 'Hospital Finder', href: ''},
+                  {title: 'Make a claim', href: ''},
+                  {title: 'Find a branch', href: ''}]).list-unstyled
+        .row
+          .col-md-3
+            .group-link.no-sub
+              h3.title
+                +link('Find a products')
+                span.collapse-icon
+          .col-md-3
+            .group-link
+              h3.title 
+                +link('Others')
+                span.collapse-icon
+              .list-links
+                +list([{title: 'Contact', href: ''},
+                  {title: 'FAQ', href: ''},
+                  {title: 'Online sale', href: ''}]).list-unstyled
+          .col-md-3
+            .group-link
+              h3.title 
+                +link('Login')
+                span.collapse-icon
+              .list-links
+                +list([{title: 'Phoenix', href: ''},
+                  {title: 'Agent', href: ''},
+                  {title: 'Easy care', href: ''},
+                  {title: 'Group web access', href: ''}]).list-unstyled
 
-      .col-md-3
-        .group-link
-          h3.title Media/Print Ads
-          .list-links
-            +list([{title: 'TVCs', href: ''},
-              {title: 'Applications', href: ''}]).list-unstyled
-
-  .footer-bot
-    .inner-container
-      p.copy-right &copy; 2019 Muang Thai Life Assurance Public Company Limited
-      
+      .col-md-4
+        .email-subscription
+          p.text-small Email Subscriptions
+          form.subscriptions-form(action="" method="post" name="email-subscriptions-form")
+            button(type="submit").submit-btn Subscript
+            .input
+              input(type="text")
+              label.label-animation ENTER YOUR EMAIL
+          p.text-small Social Media
+    
+    
+    p.copy-right Copyright &copy; 2019 Muang Thai Life Assurance Public Company Limited.

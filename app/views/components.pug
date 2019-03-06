@@ -6,9 +6,57 @@ block vars
 
 
 block container
-  .container
-    h2.title-component Thumbnail
-    //- Half Width Image
-    .wrapper.bgd-grey
-      +thumb-default('images/upload/thumb-6.jpg', 'Lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim .','modal-card-discover')
-      +thumb-default-right('images/upload/thumb-6.jpg', 'Lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim .','modal-card-discover')
+  .tab-vertical(data-tab)
+    ul
+      li
+        a(href='#tab-1') Typography
+      li
+        a(href='#tab-2') Component wrapper
+      li
+        a(href='#tab-3') Paragraph
+      li
+        a(href='#tab-4') Thumbnail
+      li
+        a(href='#tab-5') Carousel
+      li
+        a(href='#tab-6') Listing
+    #tab-1
+      include style-guide
+    #tab-2
+      .cmp-wrapper
+        include components/cards/card-3
+      .cmp-wrapper.has-bgd.bgd-1
+        include components/cards/card-3
+        
+        .cmp-slider-left
+          .inner
+            h2.title-main-2.text-2.mt-5 Related product
+            include components/carousel/slider-left-side
+
+    #tab-3
+      include components/paragraph
+    #tab-4
+      h4 Style 1
+      include components/cards/card-1
+      br
+      hr
+      h4 Style 2
+      include components/cards/card-2
+      br
+      hr
+      h4 Style 3
+      include components/cards/card-3
+  
+    #tab-5
+      h4 Style 1
+      include components/carousel/carousel-animation
+      br
+      hr
+      h4 Style 2
+      include components/carousel/slider-left-side
+      br
+      hr
+      h4 Style 2
+      include components/carousel/slider-center
+    #tab-6
+      include components/listing

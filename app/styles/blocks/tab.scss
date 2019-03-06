@@ -1,0 +1,128 @@
+/* Tabs container */
+.r-tabs {
+	position: relative;
+	.r-tabs-nav {
+		.r-tabs-tab {
+			position: relative;
+		}
+		.r-tabs-anchor {
+			display: inline-block;
+			padding: 10px 12px;
+		
+			text-decoration: none;
+			text-shadow: 0 1px rgba(0, 0, 0, 0.4);
+			font-size: 14px;
+			font-weight: bold;
+			color: #fff;
+		}
+		.r-tabs-state-disabled {
+			opacity: 0.5;
+		}
+		.r-tabs-state-active .r-tabs-anchor {
+			color: #00c5ad;
+			text-shadow: none;
+		
+			background-color: white;
+		
+			border-top-right-radius: 4px;
+			border-top-left-radius: 4px;
+		}
+	}
+
+	.r-tabs-panel {
+		background-color: white;
+	
+		border-bottom: 4px solid white;
+	
+		border-bottom-right-radius: 4px;
+		border-bottom-left-radius: 4px;
+	
+	}
+	
+	.r-tabs-accordion-title .r-tabs-anchor {
+		display: block;
+		padding: 10px;
+	
+		background-color: #00c5ad;
+		color: #fff;
+		font-weight: bold;
+		text-decoration: none;
+		text-shadow: 0 1px rgba(0, 0, 0, 0.4);
+		font-size: 14px;
+	
+		border-top-right-radius: 4px;
+		border-top-left-radius: 4px;
+	}
+	
+	.r-tabs-accordion-title.r-tabs-state-active .r-tabs-anchor {
+		background-color: #fff;
+		color: #00c5ad;
+		text-shadow: none;
+	}
+	
+	.r-tabs-accordion-title.r-tabs-state-disabled {
+		opacity: 0.5;
+	}
+	
+	.r-tabs-nav {
+		margin: 0;
+		padding: 0;
+	}
+	
+	.r-tabs-tab {
+		display: inline-block;
+		margin: 0;
+		list-style: none;
+	}
+	
+	.r-tabs-panel {
+		padding: 15px;
+		display: none;
+	}
+	
+	.r-tabs-accordion-title {
+		display: none;
+	}
+	
+	.r-tabs-panel.r-tabs-state-active {
+		display: block;
+	}
+	/* Accordion responsive breakpoint */
+	@include media-breakpoint-down(sm) {
+		.r-tabs-nav {
+				display: none;
+		}
+	
+		.r-tabs-accordion-title {
+				display: block;
+		}
+	}
+}
+
+.tab-vertical {
+	background: rgba(0,0,0,0.1);
+	.r-tabs-nav {
+		width: 150px;
+		float: left;
+		
+		.r-tabs-tab, .r-tabs-anchor {
+			display: block;
+			background: none;
+			color: black;
+		}
+		.r-tabs-anchor {
+			&:after {
+				content: '>';
+				position: absolute;
+				right: 10px;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
+	}
+	.r-tabs-panel {
+		overflow: hidden;
+		border-left: 1px solid black;
+		min-height: 100vh;
+	}
+}
