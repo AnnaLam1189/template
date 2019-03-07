@@ -28,6 +28,14 @@ gulp.task('pug', function(){
     .pipe(gulp.dest(config.build))
 });
 
+gulp.task('components', function(){
+  gulp.src(config.components + '/*.pug')
+    .pipe(pug({
+      pretty: true
+    }))
+    .pipe(gulp.dest(config.build  + '/components'))
+});
+
 // build connect
 gulp.task('connect', function(){
   connect.server({
@@ -139,6 +147,6 @@ gulp.task('concat', ['js:lint', 'js:script', 'js:libs','l10n', 'config']);
 // css
 gulp.task('css', ['scss:libs', 'scss:styles']);
 // copy
-gulp.task('copy', ['js:modernizr-detectizr', 'fonts', 'image', 'favicon', 'data']);
+gulp.task('copy', ['js:modernizr-detectizr', 'fonts', 'image', 'favicon', 'data', 'components']);
 // default
 gulp.task('default', ['pug', 'copy', 'concat', 'css', 'connect', 'watch']);

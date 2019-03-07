@@ -1,7 +1,7 @@
 
 mixin card-1(src)
   - if (typeof(src) === 'undefined') src = 'images/upload/photo-large-3.jpg'
-  a.card.card-1(href="")
+  a.card-1(href="")
     .thumb(style='background-image: url('+ src +')')
     .info
       p Sarunyoo Reangmunjit
@@ -10,7 +10,7 @@ mixin card-1(src)
 
 mixin card-2(src)
   - if (typeof(src) === 'undefined') src = 'images/upload/photo-large-3.jpg'
-  a.card.card-2(href="")
+  a.card-2(href="")
     .thumb-wrap
       span.thumb(style='background-image: url('+ src +')')
     .info
@@ -32,7 +32,7 @@ mixin card-3(src, title , content )
   - if (typeof(content) === 'undefined') content = 'Get the documents of personal income tax deductions From health insurance premiums From tax year 2018 onwards'
 
   .inner-container
-    .row.no-gutters.card.card-3&attributes(attributes)
+    .row.no-gutters.card-3&attributes(attributes)
       .col-sm-6
         .caption
           h2.title-main-3 #{title}

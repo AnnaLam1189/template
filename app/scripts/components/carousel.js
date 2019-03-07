@@ -38,24 +38,13 @@
 
     if($('[data-left-side]')[0]) {
       $('[data-left-side]').each(function(){
-        var slideNumber = Math.floor($(window).width()/$(this).find('.card').width()) - 1;
-        var slideWidth = $('.slide').outerWidth();
-        console.log(slideNumber)
+        var slideNumber = Math.floor($(window).width()/$(this).find('.card-2').width()) - 1;
         $(this).slick({
-          // infinite: false,
-          // dots: false,
-          // slidesToShow: slideNumber,
-          // variableWidth: true
-
-          dots: false,
           infinite: false,
-          speed: 300,
-          autoplay:false,
-          slidesToShow: slideNumber,
-          centerMode: false,
+          dots: false,
+          slidesToShow: 3.5,
           variableWidth: true,
           centerPadding: 0,
-          slidesToScroll: 1,
         })
         
       })
