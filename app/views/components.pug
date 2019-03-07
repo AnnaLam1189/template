@@ -27,10 +27,10 @@ block container
         include components/cards/card-3
       .cmp-wrapper.has-bgd.bgd-1
         include components/cards/card-3
-        
+      .cmp-wrapper.has-bgd.bgd-1 
         .cmp-slider-left
           
-            h2.title-main-2.text-2.mt-5 Related product
+            h2.title-main-2.text-2.mb-5 Related product
             include components/carousel/slider-left-side
 
     #tab-3
@@ -46,6 +46,9 @@ block container
       hr
       h4 Style 3
       include components/cards/card-3
+      
+      br
+      +card-3-style-2.style-2()
   
     #tab-5
       h4 Style 1

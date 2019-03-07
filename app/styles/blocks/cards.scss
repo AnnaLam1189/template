@@ -3,7 +3,7 @@
   border-radius: 3px;
   padding: 5px 20px;
   display: inline-block;
-  color: $color-2;
+  color: $color;
   border: 1px solid $color-3;
   background: white;
   &.pink,
@@ -84,6 +84,7 @@
   border: 1px solid $color-3;
   width: 370px;
   margin: 0 15px;
+  background: white;
   .thumb-wrap {
     height: 200px;
     overflow: hidden;
@@ -100,7 +101,7 @@
   .info {
     font-weight: 100;
     overflow: hidden;
-    color: $color-2;
+    color: $color;
     padding: 20px;
     .description {
       padding-top: 20px;
@@ -132,10 +133,19 @@
     background-size: cover;
     background-position: center center;
   }
-  .btn-primary {
+  .group-inline {
     position: absolute;
     bottom: $grid-gutter-width;
     left: $grid-gutter-width;
+  }
+  &.style-2 {
+    background: white;
+    .title-main-3 {
+      color: $color-5;
+    }
+    .caption {
+      color: $color;
+    }
   }
 }
 

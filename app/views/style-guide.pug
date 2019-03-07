@@ -4,37 +4,62 @@ block vars
   -title = 'Style Guide'
 
 block container
+  //- Text and title
   .row
-    .col-sm-10.offset-sm-1
-      h2.title-styleguide Title and text
-      .row
-        .col-md-6
-          h2.title-default This is title default. 
-          h2.title-primary This is title primary.
-        
-        .col-md-6
-          p this is normal text
-          p.font-weight-light this is light text
-          p.font-italic this is italic text
-          p.font-weight-bold this is bold text
-
-      h2.title-styleguide Buttons
-      .row
-        .col-12
-          +button('Button Primary','btn-primary').btn.btn-primary
-          +button('Button Secondary','btn-secondary').btn.btn-secondary
-          +button('Button Success','btn-success').btn.btn-success
-          +button('Button Warning','btn-warning').btn.btn-warning
-          +button('Button Dark','btn-dark').btn.btn-dark
-          +link().btn.btn-link Button Link 
+    .col-sm-12(style="padding-top: 40px; padding-bottom: 40px")
+      h2.title-main-2.text-pink Title and text
       hr
       .row
-        .col-12
-          .btn-group.mr-2
-            +button('Button Primary','btn-primary').btn.btn-primary
-          .btn-group
-            +button('Button Secondary','btn-secondary').btn.btn-secondary
-      
+        .col-md-6
+          h2.title-default This is title-default. 
+          h2.title-primary This is title-primary.
+          h2.title-main-1 Main title title-main-1
+          h2.title-main-2 Main title title-main-2
+          h2.title-main-3 Main title title-main-3
+        .col-md-3
+          p this is normal text
+          p.text-default this is text-default
+          p.font-weight-light this is font-weight-light
+          p.font-italic this is font-italic
+          p.font-weight-bold this is font-weight-bold
+          p.text-large this is text-large
+          p.text-medium this is text-medium
+          p.text-small this is text-small
+          p.text-smaller this is text-smaller
+
+        .col-sm-3
+          p.text-blue This is text-blue
+          p.text-pink This is text-pink
+          p.text-1 This is text-1
+          p.text-2 This is text-2
+          p.text-center This is text-center
+          p.text-right This is text-right
+  //- Buttons
+  .row
+    .col-sm-12.bgd-2(style="padding-top: 40px; padding-bottom: 40px")
+      h2.title-main-2.text-pink Buttons
+      .group-inline
+        +link('Button White').btn-white
+        +link('Button Primary').btn-primary
+        +link('Button Secondary').btn-secondary
+      br
+      br
+      .group-inline
+        +link-icon('icon-share','Button White').btn-white
+        +link-icon('icon-share-white','Button Primary').btn-primary
+        +link-icon('icon-share','Button Secondary').btn-secondary
+  
+  .row
+    //- .col-12
+    //-   .group-inline
+    //-     +button('Button White','btn-white').btn-white
+    //-     +button('Button Primary','btn-primary').btn-primary
+        
+      //- .btn-group.mr-2
+      //-   +button('Button Primary','btn-primary').btn.btn-primary
+      //- .btn-group
+      //-   +button('Button Secondary','btn-secondary').btn.btn-secondary
+  
       h2.title-styleguide Paging 
       .row
         .col-6

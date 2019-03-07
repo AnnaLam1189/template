@@ -1,7 +1,7 @@
 mixin link(title, href, text)
   - if (typeof(text) === 'undefined') text = title
   - if (typeof(href) === 'undefined') href = '#'
-  a(href=href, title=title)&attributes(attributes)
+  a(href=href)&attributes(attributes)
     if block
       block
     else
@@ -10,7 +10,13 @@ mixin link(title, href, text)
 mixin link-img(src, title, href)
   - if (typeof(text) === 'undefined') text = title
   - if (typeof(href) === 'undefined') href = '#'
-  a(href=href, title=title)&attributes(attributes)
+  a(href=href)&attributes(attributes)
     img(src=src, alt=title)
     if block
       block
+
+mixin link-icon(iconClass, text, href)
+  - if (typeof(href) === 'undefined') href = '#'
+  a(href=href)&attributes(attributes)
+    span(class=iconClass)
+    !=text
