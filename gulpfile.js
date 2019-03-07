@@ -29,7 +29,7 @@ gulp.task('pug', function(){
 });
 
 gulp.task('components', function(){
-  gulp.src(config.components + '/*.pug')
+  gulp.src(config.components + '/*.pug' && config.components + '/**/*.pug')
     .pipe(pug({
       pretty: true
     }))
