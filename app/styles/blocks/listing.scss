@@ -1,6 +1,6 @@
 .listing-item {
   overflow: hidden;
-  border-bottom: 1px solid $color-3;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
   padding: $grid-gutter-width 0;
   .thumb {
     width: 156px;
@@ -12,5 +12,10 @@
   }
   .info {
     overflow: hidden;
+  }
+  .desc {
+    @extend .text-small;
+    @extend .mt-4;
+    @extend .mb-4;
   }
 }

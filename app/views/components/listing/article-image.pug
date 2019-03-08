@@ -1,8 +1,7 @@
-include ../mixins/all
+include ../../mixins/all
 
-mixin listing-item(items)
+mixin article-image(items)
   each item in items
-    
     .listing-item
       .thumb(style='background-image: url('+item.src+')')
       .info
@@ -13,6 +12,6 @@ mixin listing-item(items)
           span 07 March 2019
           span 8min read
 
-+listing-item([{src: 'images/upload/thumb-1.jpg'},
++article-image([{src: 'images/upload/thumb-1.jpg'},
               {src: 'images/upload/thumb-2.jpg'},
               {src: 'images/upload/thumb-3.jpg'}])

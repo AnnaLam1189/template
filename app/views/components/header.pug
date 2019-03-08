@@ -1,11 +1,44 @@
 include ../mixins/all
 
 header#header
+  .top-header.hidden-sm-xs
+    .inner-container
+      +link-img('images/logo.png', 'Aleph', 'index.html').logo
+      .row
+        .col-md-6
+          ul.top-links
+            li: +link('Muangthai Smile Club')
+            li: +link('Online Sale')
+            li: +link('MTL Agent')
+            li: +link('FAQs')
+        .col-md-6
+          ul.top-links
+            li: +link('About MTL')
+            li: +link('Careers')
+            li: +link('Contact')
+            li: +link('Follow us')
+      //- .language-selection.hidden-sm-xs
+      //-   img(src="images/icons/united-kingdom.svg", alt="English")
+      //-   span EN
   .main-header
     .inner-container
       .hamburger-box
         .hamburger-inner
-      +link-img('images/logo.png', 'Aleph', 'index.html').logo
+      .inner-header
+        .nav-outer
+          .nav-inner
+            //- +link('Search','javascript:;','').icon-search(data-search-modal)
+            //-   span.hidden-md-lg Search
+            include nav
+
+            //- .language-selection.hidden-md-lg
+            //-   img(src="images/icons/united-kingdom.svg", alt="English")
+            //-   span English
+            //- include language
+        .right-header
+          +link('Login').btn-primary.btn-login(data-btn-login)
+
+
       
 
         

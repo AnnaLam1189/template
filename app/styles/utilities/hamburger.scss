@@ -1,0 +1,38 @@
+.hamburger-box {
+  position: absolute;
+  width: 18px;
+  height: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  @include media-breakpoint-up(md) {
+    display: none;
+  }
+}
+.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  transition: transform .1s ease;
+  border-radius: 4px;
+  background: white;
+}
+
+.hamburger-inner {
+  top: 2px;
+  &:before,
+  &:after {
+    display: block;
+    content: '';
+
+  }
+  &:before {
+    top: 8px;
+    width: 80%;
+    transition-duration: .2s;
+    transition-property: transform,opacity;
+  }
+  &:after {
+    top: 16px;
+  }
+
+}

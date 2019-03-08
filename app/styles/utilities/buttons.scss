@@ -79,8 +79,20 @@ button:focus {
 }
 .group-inline {
   [class*='btn-'], .app-store {
-    &:not(:first-child) {
-      margin-left: $grid-gutter-width/2;
+    display: block;
+    text-align: center;
+    @include media-breakpoint-down(xs){
+      &:not(.first-child) {
+        margin-top: $grid-gutter-width/2;
+      }
     }
+    @include media-breakpoint-up(sm){
+      vertical-align: middle;
+      display: inline-block;
+      &:not(:first-child) {
+        margin-left: $grid-gutter-width/2;
+      }
+    }
+    
   }
 }

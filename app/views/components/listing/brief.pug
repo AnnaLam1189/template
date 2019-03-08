@@ -1,0 +1,15 @@
+include ../../mixins/all
+
+mixin brief(items)
+  each item in items
+    .listing-item
+      .info
+        h4.title-default
+          !=item.title
+        .desc Mi3 Takeout: It’s sign of the times when an august title like The Economist starts questioning the more text goes here truncating after
+        p.publish-time
+          span 07 March 2019
+
++brief([{title: 'TV + video adloads cut 20% by 2020'},
+              {title: 'Top dog: Martech nabs 29% of CMO budgets'},
+              {title: 'Corporate Australia the biggest global spenders on consultants'}])

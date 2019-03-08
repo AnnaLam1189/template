@@ -86,7 +86,7 @@
 {
     float: right;
 }
-.slick-slide img
+.slick-slide > img
 {
     display: block;
 }
@@ -158,6 +158,54 @@
         transform: rotate(180deg);
     }
 }
+
+
+[data-slider] {
+    overflow: hidden;
+    .card-2 {
+      float: left;
+      width: 370px;
+    }
+  }
+  .slider-center:not(.slick-slider),
+  .slider-left:not(.slick-slider) {
+    white-space: nowrap;
+    overflow-x: scroll;
+    .item {
+      float: none;
+      display: inline-block;
+      width: 370px;
+    }
+    @include media-breakpoint-down(xs) {
+        .item  {
+            width: 80vw;
+        }
+    }
+  }
+  
+  .carousel-animation{
+    .slick-active {
+      .title-main-2 {
+  
+        @extend .animated;
+        @extend .zoomIn;
+      }
+      .desc {
+        @extend .animated;
+        @extend .zoomIn;
+      }
+      .group-inline {
+        @extend .animated;
+        -webkit-animation-duration: 1.2s;
+        @extend .fadeInUp;
+        .app-store {
+          @extend .animated;
+          @extend .pulse;
+        }
+      }
+    }
+  }
+
 .slider-center {
     .slick-slide:not(.slick-active ) {
         position: relative;

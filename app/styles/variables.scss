@@ -32,11 +32,19 @@ $color-7: #D3E2F1;
 $color-8: #7fb3e0;
 $color-9:#E48DB4;
 $color-10: #2e2e79;
+$color-11: #ea8a2e;
 
 $bgd-default: $color-10;
 $bgd-1: #FAFAFA;
 $bgd-2: #F1F1F1;
+
+// header
+$nav-color: $color;
+$nav-hover-color: $color-5;
+$nav-top-bgd: $color-10;
+$nav-bgd: white;
 // Link
 $link-color: $color;
 
 $radius: 1rem;
+$grid-gutter-width-m : 20px;

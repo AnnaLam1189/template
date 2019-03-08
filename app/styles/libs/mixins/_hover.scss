@@ -10,7 +10,14 @@
 // Issue: https://github.com/twbs/bootstrap/issues/25195
 
 @mixin hover {
-  &:hover { @content; }
+  .no-touch.desktop & {
+    &:hover  { @content; }
+  }
+  .touch & {
+    &:active {
+      @content;
+    }
+  }
 }
 
 @mixin hover-focus {

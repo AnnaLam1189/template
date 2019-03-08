@@ -1,0 +1,258 @@
+$logo: 113px;
+#header {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 11;
+  transition: all 0.3s;
+  @include media-breakpoint-down(md){
+    height: 4.5rem;
+  }
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  &.sticky {
+    position: fixed;
+    .top-header {
+      display: none;
+    }
+    &.up {
+      .top-header {
+        display: block;
+      }
+    }
+    .main-header {
+      background: blue;
+      box-shadow: 1px 2px 7px rgba(0,0,0,0.3);
+      transition: background 0.3s;
+    }
+  }
+  &.scroll-top {
+    .top-header {
+      display: block;
+    }
+  }
+  @include media-breakpoint-up(md){
+    .menu-opening & {
+      .top-header {
+        margin-top: -41px;
+      }
+      .main-header {
+        background: blue;
+      }
+    }
+  }
+
+  .logo {
+    float: left;
+    width: $logo;
+    @include media-breakpoint-down(md) {
+      float: none;
+      width: 50%;
+      margin: -11px auto 0;
+      text-align: center;
+      display: block;
+    }
+  }
+  .top-header {
+    text-align: right;
+    background-color: $nav-top-bgd;
+    box-shadow: inset 0 -3px 6px 0 rgba(0, 0, 0, 0.5);
+    .top-links {
+      display: inline-block;
+      li {
+        display: inline-block;
+        margin-right: 30px;
+      }
+      a {
+        font-size: 12px;
+        color: white;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .inner-header {
+    .nav-outer {
+      float: left;
+    }
+    @include media-breakpoint-down(md) {
+      .nav-inner {
+        background-color: $nav-bgd;
+        width: 0;
+        max-width: 320px;
+        position: absolute;
+        top:0;
+        bottom: 0;
+        max-height: 100vh;
+        overflow-y: auto;
+        transition: all 0.5s;
+      }
+      .nav-outer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        overflow: hidden;
+        background: rgba(0, 0, 0, 0.4);
+        box-shadow: 0 0 34px 0 rgba(0, 0, 0, 0.5);
+        color: black;
+        z-index: 100;
+        &.active {
+          width: 100%;
+          .nav-inner {
+            width: 90%;
+          }
+        }
+      }
+
+    }
+
+  }
+  .main-header {
+  }
+
+}
+.language {
+  .inner-header & {
+    float: left;
+    margin-top: 15px;
+
+    li {
+      float: left;
+      border-right: 1px solid #ccc;
+      padding: 0 20px;
+      &:last-child {
+        border-right: none;
+        padding-right: 0;
+      }
+      a {
+        color: black;
+        &:active,
+        .no-touch.desktop &:hover  {
+          color: blue;
+        }
+      }
+    }
+  }
+
+  li {
+    color: blue;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+  }
+}
+
+.language-selection {
+  display: inline-block;
+  color: white;
+  cursor: pointer;
+  * {
+    vertical-align: middle;
+    display: inline-block;
+  }
+  img {
+    width: 21px;
+    border-radius: 50%;
+  }
+  span {
+    text-transform: uppercase;
+    font-size: 11px;
+    margin: 0 1rem;
+  }
+  &:after {
+    // &:extend([class^="icon-"]:before);
+    // &:extend(.icon-dropdown:before);
+    display: inline-block;
+  }
+  .no-touch.desktop & {
+    &:hover {
+      span {
+        text-shadow: 0 0 15px white;
+      }
+      &:after {
+        animation: wobble-vertical 0.75s alternate;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    float: none;
+    color: #2b2b2b;
+    margin: 0 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 20.5px 0;
+    position: relative;
+    display: block;
+    span {
+      // font-family: @font-family-bold;
+    }
+    &:after {
+      transform: rotate(-90deg) translateY(-50%);
+      position: absolute;
+      right: 0;
+      top: 50%;
+      margin-top: -2px;
+    }
+  }
+}
+.right-header {
+  float: right;
+}
+.btn-login {
+  padding: 0 27px;
+  border: 1px solid transparent;
+  &:after {
+    // &:extend([class^="icon-"]:before);
+    // &:extend(.icon-login:before);
+    display: inline-block;
+    padding-left: 10px;
+  }
+  @include media-breakpoint-up(md) {
+    .layout-2 &, .sticky & {
+      &[data-btn-login] {
+         border-color: rgba(255, 255, 255, 0.5);
+      }
+    }
+    .menu-opening & {
+      background: blue;
+      border-color: rgba(255, 255, 255, 0.56);
+    }
+  }
+  @include media-breakpoint-down(md) {
+    &[data-btn-login] {
+      background: none!important;
+      padding: 0 20px 0 0;
+      font-size: 0;
+      line-height: 1;
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      &:before {
+        content: "\e902";
+        font-family: 'icomoon';
+        font-size: 7px;
+        line-height: 1;
+        display: inline-block;
+        margin-top: 2px;
+        position: absolute;
+        right: 0px;
+        top: 50%;
+      }
+      &:after {
+        font-size: 20px;
+        padding: 0;
+      }
+      &:active, &:focus {
+        text-shadow: none;
+        box-shadow: none;
+        background: none;
+      }
+    }
+  }
+  
+}

@@ -1,7 +1,7 @@
 .card-label {
   font-size: $font-smaller;
   border-radius: 3px;
-  padding: 5px 20px;
+  padding: 1px 9px;
   display: inline-block;
   color: $color;
   border: 1px solid $color-3;
@@ -11,6 +11,7 @@
     color: white;
     border-radius: 18px;
     border: none;
+    padding: 2px 15px;
   }
   &.pink {
     background: $color-9;
@@ -59,7 +60,7 @@
     position: absolute;
     bottom: 0;
     transition: all 0.5s;
-    .description {
+    .desc {
       padding-top: 20px;
       font-size: $font-medium;
     }
@@ -82,8 +83,6 @@
   display: block;
   transition: all 0.5s;
   border: 1px solid $color-3;
-  width: 370px;
-  margin: 0 15px;
   background: white;
   .thumb-wrap {
     height: 200px;
@@ -103,12 +102,14 @@
     overflow: hidden;
     color: $color;
     padding: 20px;
-    .description {
+    .desc {
       padding-top: 20px;
       font-size: $font-medium;
     }
   }
-  .title-primary {
+  .title {
+    @extend .title-default;
+    @extend .mt-4;
     min-height: 60px;
   }
   &:hover {
@@ -126,7 +127,12 @@
   background: $bgd-default;
   .caption {
     color: white;
-    padding: $grid-gutter-width;
+    @extend .p-inner;
+    .desc {
+      @extend .mt-5;
+      @extend .mb-5;
+      @include text-truncate-lines(4);
+    }
   }
   .thumb {
     height: 398px;
@@ -134,9 +140,11 @@
     background-position: center center;
   }
   .group-inline {
-    position: absolute;
-    bottom: $grid-gutter-width;
-    left: $grid-gutter-width;
+    @include media-breakpoint-up(md){
+      position: absolute;
+      bottom: $grid-gutter-width;
+      left: $grid-gutter-width;
+    }
   }
   &.style-2 {
     background: white;
@@ -145,6 +153,15 @@
     }
     .caption {
       color: $color;
+    }
+  }
+  @include media-breakpoint-down(sm){
+    flex-direction: column-reverse;
+    .thumb {
+      height: calc((100vw - 40px)/1.45);
+    }
+    .caption {
+
     }
   }
 }
@@ -168,52 +185,5 @@
   }
   .caption {
     max-width: 400px;
-  }
-}
-
-[data-slider] {
-  overflow: hidden;
-  .card-2 {
-    float: left;
-  }
-}
-.slider-center:not(.slick-slider) {
-  white-space: nowrap;
-  overflow-x: scroll;
-  .card-2 {
-    float: none;
-    display: inline-block;
-  }
-}
-
-.carousel-animation{
-  // .title-main {
-  //   @extend .rollOut;
-  //   @extend .animated;
-  // }
-  // .desc {
-  //   @extend .animated;
-  //   @extend .zoomOutLeft;
-  // }
-  
-  .slick-active {
-    .title-main-2 {
-
-      @extend .animated;
-      @extend .zoomIn;
-    }
-    .desc {
-      @extend .animated;
-      @extend .zoomIn;
-    }
-    .group-inline {
-      @extend .animated;
-      -webkit-animation-duration: 1.2s;
-      @extend .fadeInUp;
-      .app-store {
-        @extend .animated;
-        @extend .pulse;
-      }
-    }
   }
 }

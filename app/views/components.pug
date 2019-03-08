@@ -13,7 +13,7 @@ block container
       li
         a(href='#tab-2') Component wrapper
       li
-        a(href='#tab-3') Paragraph
+        a(href='#tab-3') Richtext
       li
         a(href='#tab-4') Thumbnail
       li
@@ -29,9 +29,8 @@ block container
         include components/cards/card-3
       .cmp-wrapper.has-bgd.bgd-1 
         .cmp-slider-left
-          
-            h2.title-main-2.text-2.mb-5 Related product
-            include components/carousel/slider-left-side
+          h2.title-main-2.text-2.mb-5 Related product
+          include components/carousel/slider-left-side
 
     #tab-3
       include components/paragraph
@@ -41,14 +40,40 @@ block container
       br
       hr
       h4 Style 2
-      include components/cards/card-2
+      .inner-container
+        .row
+          .col-sm-6.col-md-4
+            include components/cards/card-2
+          .col-sm-6.col-md-4
+            include components/cards/card-2
+          .col-sm-6.col-md-4
+            include components/cards/card-2
+      br
+      .inner-container
+        .row
+          .col-sm-6
+            +card-media('images/upload/photo-large-7.jpg')
+          .col-sm-6
+            +card-media('images/upload/photo-large-8.jpg')
+      br
+      .inner-container
+        .row
+          .col-sm-3
+            +card-media-small()
+          .col-sm-3
+            +card-media-small('images/upload/photo-large-4.jpg')
+          .col-sm-3
+            +card-media-small('images/upload/photo-large-5.jpg')
+          .col-sm-3
+            +card-media-small('images/upload/photo-large-6.jpg')
       br
       hr
       h4 Style 3
       include components/cards/card-3
       
       br
-      +card-3-style-2.style-2()
+      .inner-container
+        +card-3-style-2.style-2()
   
     #tab-5
       h4 Style 1
@@ -56,10 +81,18 @@ block container
       br
       hr
       h4 Style 2
-      include components/carousel/slider-left-side
+      .cmp-slider-left
+        include components/carousel/slider-left-side
       br
       hr
       h4 Style 2
       include components/carousel/slider-center
     #tab-6
-      include components/listing
+      .row
+        .col-md-8
+          include components/listing/article-image
+        .col-md-4
+          include components/listing/article-no-image
+        .col-md-4
+          include components/listing/brief
+          

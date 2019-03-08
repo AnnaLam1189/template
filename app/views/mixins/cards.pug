@@ -1,23 +1,23 @@
 
 mixin card-1(src)
   - if (typeof(src) === 'undefined') src = 'images/upload/photo-large-3.jpg'
-  a.card-1(href="")
+  a.item.card-1(href="")
     .thumb(style='background-image: url('+ src +')')
     .info
       p Sarunyoo Reangmunjit
       p.text-medium MTL Customer
-      .description The difference with MTL is just how easy everything is. Health insurance can be so confusing and stressful and MTL it just takes all that away.
+      .desc The difference with MTL is just how easy everything is. Health insurance can be so confusing and stressful and MTL it just takes all that away.
 
 mixin card-2(src)
   - if (typeof(src) === 'undefined') src = 'images/upload/photo-large-3.jpg'
-  a.card-2(href="")
+  a.item.card-2(href="")
     .thumb-wrap
       span.thumb(style='background-image: url('+ src +')')
     .info
       .group-card-label
         .card-label.blue OPD
         .card-label.pink IPD
-      h4.title-primary.mt-4 Muangthai Happy Lady Plus
+      h4.title Muangthai Happy Lady Plus
       
       p.text-smaller Maximum coverage 375,000 THB / Year
       .group-card-label
@@ -32,14 +32,14 @@ mixin card-3(src, title , content )
   - if (typeof(content) === 'undefined') content = 'Get the documents of personal income tax deductions From health insurance premiums From tax year 2018 onwards'
 
   .inner-container
-    .row.no-gutters.card-3&attributes(attributes)
-      .col-sm-6
+    .row.no-gutters.item.card-3&attributes(attributes)
+      .col-md-6
         .caption
           h2.title-main-3 #{title}
-          .desc.mt-5 #{content}
-        .group-inline
-          +link('Request the document').btn-white
-      .col-sm-6
+          .desc #{content}
+          .group-inline
+            +link('Request the document').btn-white
+      .col-md-6
         .thumb(style="background-image: url("+src+")")
 
 mixin card-3-style-2(src, title , content )
@@ -48,15 +48,15 @@ mixin card-3-style-2(src, title , content )
   - if (typeof(content) === 'undefined') content = 'Get the documents of personal income tax deductions From health insurance premiums From tax year 2018 onwards'
 
   .inner-container
-    .row.no-gutters.card-3&attributes(attributes)
-      .col-sm-6
+    .row.no-gutters.item.card-3&attributes(attributes)
+      .col-md-6
         .caption
           h2.title-main-3 #{title}
           .desc.mt-5 #{content}
         .group-inline
           +link('Download').btn-primary(target="_blank")
           +link-icon('icon-share', 'Share').btn-secondary
-      .col-sm-6
+      .col-md-6
         .thumb(style="background-image: url("+src+")")
 
 mixin card-full(src, title , content )
@@ -72,3 +72,31 @@ mixin card-full(src, title , content )
       .group-inline.mt-5
         +link-img('images/apple-store.png').app-store
         +link-img('images/play-store.png').app-store
+
+
+mixin card-media(src)
+  - if (typeof(src) === 'undefined') src = 'images/upload/photo-large-3.jpg'
+  .item.card-2
+    .thumb-wrap
+      span.thumb(style='background-image: url('+ src +')')
+    .info
+      p.publish-time
+        span 07 March 2019
+        span 8 min read
+      h4.title MCMOs to double down on Marketing Analytics
+      .desc Spending on marketing analytics is forecast to increase by more than 200% in the next three years, according to the most recent CMO Survey from Duke University's Fuqua School of Business and supported by Deloitte and the American Marketing.
+      p.publish-time.bigger
+        span Go deeper
+        span 5 min read
+
+mixin card-media-small(src)
+  - if (typeof(src) === 'undefined') src = 'images/upload/photo-large-3.jpg'
+  .item.card-2
+    .thumb-wrap
+      span.thumb(style='background-image: url('+ src +')')
+    .info
+      h4.title Tourism Australia CMO Lisa Ronson jumps aisle to Coles
+      p.publish-time
+        span 07 March 2019
+        span 8 min read
+      

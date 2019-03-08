@@ -1,0 +1,37 @@
+
+$menu-pad: 40px;
+
+#nav {
+  @include media-breakpoint-up(md) {
+    float: left;
+    padding-top: 17px;
+  }
+  .nav-title {
+    color: blue;
+    text-transform: uppercase;
+    padding: 30px 0;
+    &:after {
+      // &:extend([class^="icon-"]:before);
+      // &:extend(.icon-arrow-left:before);
+      margin-left: 20px;
+      font-size: 0.8em;
+    }
+  }
+}
+.main-nav{
+  li {
+    float: left;
+    margin-left: 40px;
+    a {
+      font-weight: bold;
+      @include hover {
+        color: $nav-hover-color;
+        text-decoration: none;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    
+  }
+}

@@ -23,9 +23,8 @@ html(class="no-js", lang="en")
   body(class=bodyClass)
     .page
       include ../components/header
-      //- .container
-
-      block container
+      .inner-page 
+        block container
       include ../components/footer
       block layer
     include ../blocks/script
