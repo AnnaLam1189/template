@@ -13,15 +13,26 @@ block container
       li
         a(href='#tab-2') Component wrapper
       li
-        a(href='#tab-3') Richtext
+        a(href='#tab-3') Wrap up
       li
-        a(href='#tab-4') Thumbnail
+        a(href='#tab-4') Richtext
       li
         a(href='#tab-5') Carousel
+
       li
         a(href='#tab-6') Listing
+
+      li
+        a(href='#tab-7') Card 1
+      li
+        a(href='#tab-8') Card 2
+      li
+        a(href='#tab-9') Card 3
+      
+      
     #tab-1
       include style-guide
+
     #tab-2
       .cmp-wrapper
         include components/cards/card-3
@@ -33,48 +44,11 @@ block container
           include components/carousel/slider-left-side
 
     #tab-3
-      include components/paragraph
+      include components/wrap-up
+
     #tab-4
-      h4 Style 1
-      include components/cards/card-1
-      br
-      hr
-      h4 Style 2
-      .inner-container
-        .row
-          .col-sm-6.col-md-4
-            include components/cards/card-2
-          .col-sm-6.col-md-4
-            include components/cards/card-2
-          .col-sm-6.col-md-4
-            include components/cards/card-2
-      br
-      .inner-container
-        .row
-          .col-sm-6
-            +card-media('images/upload/photo-large-7.jpg')
-          .col-sm-6
-            +card-media('images/upload/photo-large-8.jpg')
-      br
-      .inner-container
-        .row
-          .col-sm-3
-            +card-media-small()
-          .col-sm-3
-            +card-media-small('images/upload/photo-large-4.jpg')
-          .col-sm-3
-            +card-media-small('images/upload/photo-large-5.jpg')
-          .col-sm-3
-            +card-media-small('images/upload/photo-large-6.jpg')
-      br
-      hr
-      h4 Style 3
-      include components/cards/card-3
-      
-      br
-      .inner-container
-        +card-3-style-2.style-2()
-  
+      include components/paragraph
+
     #tab-5
       h4 Style 1
       include components/carousel/carousel-animation
@@ -87,6 +61,7 @@ block container
       hr
       h4 Style 2
       include components/carousel/slider-center
+
     #tab-6
       .row
         .col-md-8
@@ -95,4 +70,53 @@ block container
           include components/listing/article-no-image
         .col-md-4
           include components/listing/brief
+
+    #tab-7
+      include components/cards/card-1
+    
+    #tab-8
+      
+      .row
+        .col-sm-6.col-md-4
+          include components/cards/card-2
+        .col-sm-6.col-md-4
+          include components/cards/card-2
+        .col-sm-6.col-md-4
+          include components/cards/card-2
+      br
+      hr
+      br
+      .row
+        .col-sm-3
+          +card-media-small()
+        .col-sm-3
+          +card-media-small('images/upload/photo-large-4.jpg')
+        .col-sm-3
+          +card-media-small('images/upload/photo-large-5.jpg')
+        .col-sm-3
+          +card-media-small('images/upload/photo-large-6.jpg')
+      br
+      hr
+      br
+      .row
+        .col-sm-6
+          +card-media('images/upload/photo-large-7.jpg')
+      br
+      br
+      hr
+      .row
+        .col-sm-7
+          +card-media-preview('images/upload/photo-large-8.jpg', 'yellow')
+        
+    #tab-9
+      .inner-container
+        include components/cards/card-3
+      
+        br
+        +card-3-style-2.style-2()
+  
+    
+    
+
+    
           

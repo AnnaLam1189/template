@@ -50,7 +50,32 @@
 .text-2 {
   color: $color;
 }
-
+.sub-title {
+  text-transform: uppercase;
+  font-size: $font-small;
+  padding-bottom: 5px;
+  position: relative; 
+  display: inline-block;
+  &:after {
+    content: '';
+    height: 4px;
+    width: 50%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: $color-11;
+  }
+  &.yellow {
+    &:after {
+      background: $color-12;
+    }
+  }
+  &.blue {
+    &:after {
+      background: $color-13;
+    }
+  }
+}
 .publish-time {
   @extend .text-smaller;
   @extend .text-1;
@@ -75,4 +100,7 @@
       }
     }
   }
+}
+.wrap-up {
+  text-align: center;
 }

@@ -86,6 +86,7 @@
   background: white;
   .thumb-wrap {
     height: 200px;
+    display: block;
     overflow: hidden;
   }
   .thumb {
@@ -107,22 +108,43 @@
       font-size: $font-medium;
     }
   }
+  .publish-time {
+    margin-top: $grid-gutter-width; 
+  }
   .title {
     @extend .title-default;
     @extend .mt-4;
-    min-height: 60px;
   }
   &:hover {
     text-decoration: none;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    // box-shadow: 0 0 10px rgba(0,0,0,0.5);
     .thumb {
       transform: scale(1.1) rotate(2deg);
     }
     .info {
+    
+    }
+  }
+  &.no-wrap {
+    border: none;
+    .title {
+      @extend .title-main-3;
+    }
+    .thumb-wrap {
+      height: 400px;
+    }
+    .info {
+      padding: 0;
     }
   }
 }
-
+.col-sm-3 {
+  .card-2 {
+    .thumb-wrap {
+      
+    }
+  }
+}
 .card-3 {
   background: $bgd-default;
   .caption {

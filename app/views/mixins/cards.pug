@@ -10,14 +10,15 @@ mixin card-1(src)
 
 mixin card-2(src)
   - if (typeof(src) === 'undefined') src = 'images/upload/photo-large-3.jpg'
-  a.item.card-2(href="")
-    .thumb-wrap
+  .item.card-2(href="")
+    +link().thumb-wrap
       span.thumb(style='background-image: url('+ src +')')
     .info
       .group-card-label
         .card-label.blue OPD
         .card-label.pink IPD
-      h4.title Muangthai Happy Lady Plus
+      h4.title
+        +link('Muangthai Happy Lady Plus')
       
       p.text-smaller Maximum coverage 375,000 THB / Year
       .group-card-label
@@ -77,13 +78,14 @@ mixin card-full(src, title , content )
 mixin card-media(src)
   - if (typeof(src) === 'undefined') src = 'images/upload/photo-large-3.jpg'
   .item.card-2
-    .thumb-wrap
+    +link().thumb-wrap
       span.thumb(style='background-image: url('+ src +')')
     .info
       p.publish-time
         span 07 March 2019
         span 8 min read
-      h4.title MCMOs to double down on Marketing Analytics
+      h4.title
+        +link('MCMOs to double down on Marketing Analytics')
       .desc Spending on marketing analytics is forecast to increase by more than 200% in the next three years, according to the most recent CMO Survey from Duke University's Fuqua School of Business and supported by Deloitte and the American Marketing.
       p.publish-time.bigger
         span Go deeper
@@ -92,11 +94,30 @@ mixin card-media(src)
 mixin card-media-small(src)
   - if (typeof(src) === 'undefined') src = 'images/upload/photo-large-3.jpg'
   .item.card-2
-    .thumb-wrap
+    +link().thumb-wrap
       span.thumb(style='background-image: url('+ src +')')
     .info
-      h4.title Tourism Australia CMO Lisa Ronson jumps aisle to Coles
+      h4.title
+        +link('Tourism Australia CMO Lisa Ronson jumps aisle to Coles')
       p.publish-time
         span 07 March 2019
         span 8 min read
       
+
+mixin card-media-preview(src, category)
+  - if (typeof(src) === 'undefined') src = 'images/upload/photo-large-3.jpg'
+  .item.card-2.no-wrap
+    p.sub-title(class=category) The Deep Dive
+    h4.title Machine automation in media + marketing 65% done by 2025 - what next?
+    .thumb-wrap
+      span.thumb(style='background-image: url('+ src +')')
+    .info
+      //- p.publish-time
+      //-   span 07 March 2019
+      //-   span 8 min read
+      .desc
+        strong Futureshock:
+        | Up to 95% of all media transactions will be informed by machine intelligence and just 25% will remain relationship and ideas based by 2025. Should we expect radical changes now to job numbers, skillsets and business processes in an automated media supply chain?
+      p.publish-time.bigger
+        span Go deeper
+        span 5 min read

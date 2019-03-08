@@ -1,0 +1,23 @@
+.link-primary {
+  position: relative;
+  span {
+    position: relative;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 12px;
+    background: #ffdd00;
+    transition: all 0.3s;
+  }
+  @include hover {
+    text-decoration: none;
+    &:before {
+      height: 5px;
+
+    }
+  }
+}
