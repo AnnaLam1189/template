@@ -1,0 +1,37 @@
+include ../mixins/all
+
+mixin plan(title, money)
+  .item.plan
+    .head
+      h3.sub-title #{title}
+      .desc Sum Insured
+      .money #{money}
+    .info
+      table
+        tr
+          td Start
+          td 1656.00 THB/Month
+        tr
+          td Protection Period
+          td 20 Years
+        tr
+          td Death Coverage
+          td 180,000 THB
+        tr
+          td The maximum benefit per year
+          td 180,000 THB
+    
+    .group-inline
+      +link('Read more').btn-secondary
+      +link('Choose').btn-primary
+
+.cmp-slider-left
+  h2.title-main-2 Choose my plan
+  .slider-left(data-slider, data-left-side)
+    +plan('PLAN 1','100,000 THB')
+    +plan('PLAN 2','125,000 THB')
+    +plan('PLAN 3','150,000 THB')
+    +plan('PLAN 4','175,000 THB')
+    +plan('PLAN 5','200,000 THB')
+    +plan('PLAN 6','250,000 THB')
+    

@@ -32,6 +32,9 @@
 {
     outline: none;
 }
+.slick-slide:focus {
+    outline: none;
+}
 .slick-list.dragging
 {
     cursor: pointer;
@@ -162,8 +165,8 @@
 
 [data-slider] {
     overflow: hidden;
-    .card-2 {
-      float: left;
+    .slick-slide {
+      @extend .m-outer;
       width: 370px;
     }
   }
@@ -171,10 +174,14 @@
   .slider-left:not(.slick-slider) {
     white-space: nowrap;
     overflow-x: scroll;
+    padding-left: 1px;
     .item {
       float: none;
       display: inline-block;
+      outline: none;
       width: 370px;
+      white-space: normal;
+      margin-right: 20px;
     }
     @include media-breakpoint-down(xs) {
         .item  {
@@ -206,7 +213,7 @@
     }
   }
 
-.slider-center {
+.slider-center, .slider-left {
     .slick-slide:not(.slick-active ) {
         position: relative;
        &:before {
@@ -231,4 +238,18 @@
 .slider-left {
     overflow: visible;
     .slick-list{overflow: visible;}
+    .slick-arrow {
+        background: url('../images/icons/carousel-icon.svg') no-repeat center center;
+        width: 56px;
+        height: 56px;
+        &:before, &:after {
+            content: none;
+        }
+        @include hover {
+            opacity: 0.9;
+        }
+    }
+    .slick-prev {
+        transform: rotate(180px);
+    }
 }

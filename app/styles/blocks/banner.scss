@@ -37,10 +37,15 @@ $bannerHeight: 450px;
   }
   .sub-title {
     @extend .title-primary;
+    margin-bottom: 10px;
+    &:after {
+      content: '>';
+      margin-left: 5px;
+    }
   }
   .title {
     @extend .title-main-1;
-    @extend .mt-mb;
+    @extend .mb;
   }
   .group-inline {
     position: absolute;

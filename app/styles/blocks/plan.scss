@@ -1,0 +1,47 @@
+.plan {
+  background: white;
+  border-radius: 3px;
+  box-shadow: 0 2px 4px 0 #edeff4;
+  overflow: hidden;
+  font-size: $font-medium;
+  margin: 20px 0 0;
+  .head {
+    @extend .p-inner;
+    background: $color-5;
+    color: white;
+    .sub-title {
+      font-weight: bold;
+      @extend .text-medium;
+      text-transform: uppercase;
+    }
+    .desc {
+
+    }
+    .money {
+      @extend .title-main-4;
+    }
+  }
+  .info {
+    table {
+      width: 100%;
+    }
+    td {
+      border-bottom: 1px dashed #edeff4;
+      &:first-child {
+        padding: 15px 10px 15px 20px;
+      }
+      &:last-child {
+        padding: 15px 20px 15px 10px;
+        text-align: right;
+      }
+    }
+  }
+  .group-inline {
+    @extend .p-inner;
+    @include media-breakpoint-up(sm){
+      .btn {
+        width: calc((100% - 15px)/2);
+      }
+    }
+  }
+}

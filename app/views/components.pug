@@ -30,6 +30,10 @@ block container
         a(href='#tab-9') Card 3
       li
         a(href='#tab-10') Banner
+      li
+        a(href='#tab-11') Benefit
+      li
+        a(href='#tab-12') Choose my plan
       
     #tab-1
       include style-guide
@@ -120,6 +124,12 @@ block container
       +banner('images/upload/banner.jpg','Calculate Premium','Buy Online')
       br
       +banner()
+
+    #tab-11
+      include components/benefit
+    
+    #tab-12
+      include components/plan
     
 
     
