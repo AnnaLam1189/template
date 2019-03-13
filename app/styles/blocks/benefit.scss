@@ -1,0 +1,22 @@
+.benefit {
+  @extend .mt;
+  .thumb {
+    background: $bgd-3;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+  .info {
+    margin-top: 20px;
+  }
+  .title {
+    @extend .text-medium;
+    font-weight: bold;
+  }
+  .desc {
+    @extend .text-medium;
+  }
+}

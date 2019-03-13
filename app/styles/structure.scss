@@ -10,9 +10,23 @@
     margin: $grid-gutter-width-m /2 ;
   }
 }
+.mt-mb {
+  margin: $grid-gutter-width 0;
+  @include media-breakpoint-down(lg){
+    margin: $grid-gutter-width-m 0 ;
+  }
+}
+.mt {
+  margin-top: $grid-gutter-width;
+  @include media-breakpoint-down(lg){
+    margin-top: $grid-gutter-width-m;
+  }
+}
 .inner-page {
-  margin-top: 150px;
+  max-width: 1400px;
+  margin: 150px auto 0;
   overflow: hidden;
+  position: relative;
 }
 .inner-container {
   max-width: 1170px;

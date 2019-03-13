@@ -1,0 +1,22 @@
+include ../mixins/all
+
+mixin benefit(src, title, desc)
+  .benefit
+    .thumb
+      +img(src,title)
+    .info
+      h3.title #{title}
+      p.desc #{desc}
+
+.inner-container
+  h2.title-main-2 Highlight benefits
+
+  .row
+    .col-6.col-sm-3
+      +benefit('images/upload/icons/benefit-1.svg','Eligable Age','15 - 59 Yeas old')
+    .col-6.col-sm-3
+      +benefit('images/upload/icons/benefit-2.svg','Coverage Period','20 Years')
+    .col-6.col-sm-3
+      +benefit('images/upload/icons/benefit-3.svg','Premium Payment Period','8 Years')
+    .col-6.col-sm-3
+      +benefit('images/upload/icons/benefit-4.svg','Tax deduction','Maximum 100,000 THB')

@@ -4,16 +4,18 @@ button:focus {
 .btn-default {
   @include border-radius($radius)
 }
-
+.btn-min-width {
+  min-width: 205px;
+}
 .btn {
-  font: bold $font-size-base 'Ubuntu',$font-family-base;
-  line-height: 56px;
+  font-size: $font-medium;
+  font-weight: bold;
+  line-height: $button-height;
   display: inline-block;
   padding: 0 30px;
   border: none;
   border-radius: 28px;
-  transition: all 0.3s;
-
+  transition: all 0.5s;
   span {
     display: inline-block;
     vertical-align: middle;
@@ -25,7 +27,7 @@ button:focus {
     }
   }
 
-  &:hover {
+  @include hover {
     text-decoration: none;
   }
 }
@@ -33,7 +35,7 @@ button:focus {
   @extend .btn;
   color: $color;
   background: white;
-  &:hover {
+  @include hover {
     color: white;
     background: $color;
     [class*='icon'] {
@@ -47,7 +49,7 @@ button:focus {
   @extend .btn;
   color: white;
   background: $color-5;
-  &:hover {
+  @include hover {
     color: white;
     @include gradient-y($color-5, lighten($color-5, 20%))
   }
@@ -58,7 +60,7 @@ button:focus {
   color: $color;
   background: white;
   border: 1px solid rgba(0,0,0,0.1);
-  &:hover {
+  @include hover {
     color: white;
     background: $color;
     border-color: $color;

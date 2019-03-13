@@ -28,7 +28,8 @@ block container
         a(href='#tab-8') Card 2
       li
         a(href='#tab-9') Card 3
-      
+      li
+        a(href='#tab-10') Banner
       
     #tab-1
       include style-guide
@@ -115,7 +116,10 @@ block container
         br
         +card-3-style-2.style-2()
   
-    
+    #tab-10
+      +banner('images/upload/banner.jpg','Calculate Premium','Buy Online')
+      br
+      +banner()
     
 
     

@@ -1,0 +1,84 @@
+$bannerHeight: 450px;
+.banner {
+  position: relative;
+  overflow: hidden;
+  .thumb {
+    position: relative;
+    height: $bannerHeight;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    transition: all .3s;
+    &:before {
+      content: '';
+      background: rgba(0,0,0,0.2);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+  .caption {
+    color: white;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    > .inner-container {
+      padding-top: 100px;
+      padding-bottom: 100px;
+       > * {
+         max-width: 800px;
+       }
+    }
+  }
+  .sub-title {
+    @extend .title-primary;
+  }
+  .title {
+    @extend .title-main-1;
+    @extend .mt-mb;
+  }
+  .group-inline {
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: right;
+    [class^='btn-'] {
+      @extend .btn-min-width;
+    }
+  }
+  .group-inline + .thumb {
+    height: $bannerHeight - 30px;
+    margin-bottom: $button-height/2;
+  }
+  @include media-breakpoint-down(xs) {
+    display: flex;
+    flex-flow: column-reverse;
+    .group-inline {
+      position: relative;
+      z-index: 10;
+      margin-bottom: 30px;
+    }
+    .thumb,
+    .group-inline +.thumb {
+      position: absolute;
+      margin-bottom: 0;
+      height: 100%;
+      width: 100%;
+      top: 0;
+    }
+    .caption {
+      position: relative;
+      .inner-container {
+        padding: 20px;
+      }
+    }
+  }
+}
+ 

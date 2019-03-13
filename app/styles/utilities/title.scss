@@ -8,10 +8,16 @@
 .title-main-1 {
   font-size: 5rem;
   font-weight: bold;
+  @include media-breakpoint-down(sm){
+    font-size: 3.6rem;
+  }
 }
 .title-main-2 {
   font-size: 4.2rem;
   font-weight: bold;
+  @include media-breakpoint-down(sm){
+    font-size: 3.3rem;
+  }
 }
 .title-main-3 {
   font-size: 3.6rem;
@@ -51,29 +57,13 @@
   color: $color;
 }
 .sub-title {
-  text-transform: uppercase;
   font-size: $font-small;
   padding-bottom: 5px;
   position: relative; 
   display: inline-block;
   &:after {
-    content: '';
-    height: 4px;
-    width: 50%;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    background: $color-11;
-  }
-  &.yellow {
-    &:after {
-      background: $color-12;
-    }
-  }
-  &.blue {
-    &:after {
-      background: $color-13;
-    }
+    content: '>';
+    margin-left: 5px;
   }
 }
 .publish-time {

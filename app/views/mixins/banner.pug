@@ -1,0 +1,14 @@
+mixin banner(src, btn1, btn2)
+  - if (typeof(src) === 'undefined') src = 'images/upload/banner.jpg'
+  .banner
+    if (btn1 && btn1)
+      .group-inline
+        .inner-container
+          +link('Calculate Premium').btn-primary
+          +link('Buy Online').btn-primary
+    .thumb(style='background-image:url('+src+')')
+    .caption
+      .inner-container
+        .sub-title What we have
+        h2.title Muang Thai Smile Saving 20/8
+        .desc We designed the variety of savins insurance plans to cover all your needs, for you getting start by simply putting your mony aside while living your life youfully the way you want to.
